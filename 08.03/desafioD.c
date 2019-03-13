@@ -8,7 +8,9 @@
   saída: menor valor a se pagar
 */
 
-void merge(int ini, int m, int final, int v[]){
+#define ll long long int
+
+void merge(int ini, int m, int final, long long int v[]){
 	int i, j, k;
 	int tam1 = m - ini + 1;
 	int tam2 = final - m;
@@ -24,8 +26,8 @@ void merge(int ini, int m, int final, int v[]){
 
 	i=0, j=0,k=ini;
 
-	while(i<tam1 && j <tam2){
-		if(vet1[i]<=vet2[j]){
+	while(i<tam1 && j<tam2){
+		if(vet1[i]>=vet2[j]){
 			v[k] = vet1[i];
 			i++;
 		}else{
@@ -49,7 +51,7 @@ void merge(int ini, int m, int final, int v[]){
 }
 
 
-void mergesort(int ini, int final, int v[]){
+void mergesort(int ini, int final, long long int v[]){
 
 	 if(ini < final){
 		
@@ -62,20 +64,26 @@ void mergesort(int ini, int final, int v[]){
 
 
 int main(){	
-	int n, m, i, casos=0, somaB=0, c;
-	int *vetB;
+	int n, m, i, casos=0, c;
+	ll *vetB, somaB=0;
 
 	scanf("%d",&n);
 
-	vetB = (int *)malloc(n*sizeof(int));
+	vetB = (ll *)malloc(n*sizeof(ll));
 
 	for(i=0;i<n;i++){
-		scanf("%d",&vetB[i]);
+		scanf("%lli",&vetB[i]);
 		somaB=somaB+vetB[i];
 	}
 
 	mergesort(0,n-1,vetB);
 
+/*
+	for(i=0;i<n;i++){
+		printf("%d ", vetB[i]);
+	}
+
+	printf("\n"); */
 	scanf("%d",&m);
 
 
@@ -83,8 +91,8 @@ int main(){
 
 		scanf("%d",&c);
 
-
-		printf("%d\n",somaB-vetB[n-c]);
+	/*	printf("%d\n", vetB[c-1]); */
+		printf("%lli\n",somaB-vetB[c-1]);
 		casos++;
 	}
 
