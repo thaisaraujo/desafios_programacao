@@ -1,9 +1,12 @@
 #!/usr/bin/python
 #/usr/bin/python3.5
 
+'''
+Summing Digits - UVA 11332
+'''
+
 
 def main():
-#    print('comecou')
     entrada = (input())
     while(int(entrada) != 0):
         str(entrada)

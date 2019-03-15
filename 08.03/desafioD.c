@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*#include<vector.h>
-
+/*
   n barras
   m diferentes cupons
   saída: menor valor a se pagar
+  Discounts - CodeForces 1132B
 */
 
 #define ll long long int

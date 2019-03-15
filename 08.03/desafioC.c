@@ -1,29 +1,7 @@
 /*
  entrada: numero n de vezes que devera ser apresentada a sentenca
- saida: minimo de comando para apresentar a setenca n vezes
-
-  int i, entrada, total=0;
-  int vet[MAX];
-  float qtdComando;
-
-  for(i=1;i<MAX;i++){
-
-    scanf("%d",&vet[i]);
-
-    if(vet[i] == -1){
-      return 0;
-
-    }else if(i == 1){
-      total = vet[i];
-      printf("Case %d: 1\n", i);
-
-    }else{
-        qtdComando = (float)(vet[i] - vet[i-1]) / vet[i-1];
-        qtdComando = ceil(qtdComando);
-        printf("Case %d: %0.f\n", i,qtdComando);
-
-    }
-  }
+ saida: minimo de comando para apresentar a setenca n vezes - dados as sit anterior
+ Hello World - UVA 11636
 
 
 */
