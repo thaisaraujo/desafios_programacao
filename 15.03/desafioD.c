@@ -3,17 +3,18 @@
 #define entrada 9
 #define total 100
 
+/* D - PATULJCI = KATTIS
+ *
+ */
+
 int somacem(int vet[],int i, int j){
   int l, soma=0;
 
   for(l=0;l<entrada;l++){
-    if(l==i || l==j){
-      if(l==entrada-1)
-        break;
-      l++;
-    }
-    soma=soma+vet[l];
+    if(l!=i && l!=j)
+      soma+=vet[l];
   }
+ /* printf("soma: %d", soma);*/
     if(soma==total)
       return 1;
     else
@@ -23,44 +24,40 @@ int somacem(int vet[],int i, int j){
 
 
 int main(){
-  int i=0,j, input, soma=0, somat=0, somaS=0, anao1, anao2, res;
+  int i=0,j,soma=0, somat=0, somaS=0, anao1, anao2, res;
   int vet[entrada];
 
   while(i<entrada){
-    scanf("%d",&input);
-    vet[i]=input;
-    soma=soma+input;
-
+    scanf("%d",&vet[i]);
+    soma+=vet[i];
     i++;
   }
 
   res = soma-total;
-  i=0;
 
-  while(i<entrada){
+  for(i=0;i<entrada;i++){
     for(j=i+1;j<entrada;j++){
-      somat=vet[i]+vet[j];
+      if(i!=j){
+        somat=vet[i]+vet[j];
         if(somat==res){
+       /*   printf("vet[%d]:%d - vet[%d]:%d", i, vet[i], j, vet[j]); */
           somaS = somacem(vet, i, j);
-      /*    printf("somaS:%d\n",somaS);*/
-          if(somaS == 1){
-            anao1=vet[i];
-            anao2=vet[j];
-            i=entrada;
-            j=entrada;
+         /*   printf("somaS:%d\n",somaS);  */
+            if(somaS == 1){
+              anao1=i;
+              anao2=j;
+              i=entrada;
+              j=entrada;
+            }
+            somat=0;
           }
-        }
+      }
     }
-    i++;
   }
 
   for(i=0;i<entrada;i++){
-    if(vet[i]==anao1 || vet[i]==anao2){
-      if(i==entrada-1)
-        break;
-      i++;
-    }
-    printf("%d\n",vet[i]);
+    if(i!=anao1 && i!=anao2)
+      printf("%d\n",vet[i]);
   }
 
     return 0;
