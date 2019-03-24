@@ -1,6 +1,11 @@
 #!/usr/bin/python
 #/usr/bin/python3.5
 
+'''
+desafio A
+Line Them UP - Kattis
+'''
+
 import copy
 
 def main():

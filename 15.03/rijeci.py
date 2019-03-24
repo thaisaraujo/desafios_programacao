@@ -1,6 +1,13 @@
 #!/usr/bin/python
 #/usr/bin/python3.5
 
+'''
+Desafio B
+Rijeci - Kattis
+A -> B
+B -> AB
+'''
+
 def main():
     a, b, i = 1, 1, 2
     n = input()

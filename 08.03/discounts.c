@@ -2,6 +2,7 @@
 #include<stdlib.h>
 
 /*
+ Desafio D
   n barras
   m diferentes cupons
   saída: menor valor a se pagar

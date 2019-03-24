@@ -4,8 +4,8 @@
 #define col 12
 #define linF 3
 
-/* Prioridades de preenchimento
- *
+/* desafio B
+ * Prioridades de preenchimento
  */
 
 int main(){

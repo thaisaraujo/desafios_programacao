@@ -3,8 +3,9 @@
 #define entrada 9
 #define total 100
 
-/* D - PATULJCI = KATTIS
- *
+/* 
+ * Desafio D
+ * PATULJCI - KATTIS
  */
 
 int somacem(int vet[],int i, int j){

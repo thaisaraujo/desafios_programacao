@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<string.h>
 
+/*
+ * Desafio C - Codeforces
+ * nineteen
+ */
 
 #define MAX 101
 #define TAM 3

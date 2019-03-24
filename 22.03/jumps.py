@@ -3,6 +3,7 @@
 import os, sys
 
 '''
+desafio A
 Jumps
 x  ponto de chegada
 n  quantidade de variacoes de dist
