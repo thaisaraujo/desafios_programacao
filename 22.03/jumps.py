@@ -11,36 +11,39 @@ dist[n] as variacoes das dist
 '''
 
 
-def sum(dist, n, x):
-    if(x == 0):
-        return True
-    if(n == 0 and x!= 0):
-        return False
 
-    if(dist[n-1] > x):
-        return sum(dist, n-1, x);
+def mdc(res, dist):
+    if(dist == 0):
+        return res
+    return mdc(dist, res%dist)
+  
 
-    return sum(dist, n-1, x) or sum(dist, n-1, x-dist[n-1])
 
 
 def main():
     entrada = input()
     n, x = (int(numero) for numero in entrada.split(' '))
     i = 0
+    res = 0
 
     dist = []
     dist = input().split(' ')
+  #  print(dist)
 
     while(i<n):
         dist[i] = int(dist[i])
+     #   print(dist[i])
+        res = mdc(res, dist[i])
         i+=1
 
-    res = sum((dist), n, x)
 
-    if(res == True):
-        print("YES")
+    if(x < 0):
+        x = -x
+    if(x % res == 0):
+        print("YES\n")
     else:
-        print("NO")
+        print("NO\n")
+
 
 
 main()
