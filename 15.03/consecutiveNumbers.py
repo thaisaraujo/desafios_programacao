@@ -2,37 +2,35 @@
 #/usr/bin/python3.5
 
 '''
+Desafio H
 Consecutive Numbers Gym - 101807C
 q numero de perguntas
 para cada q responder se x pode ser representado pela soma de pelo menos dois inteiros positvos consecutivo
+
+A soma de dois números consecutivos é ímpar, pois um deles deve ser par e outro ímpar. 
+2 n = 2 n-1 + 2 n-1
 '''
 
+def soma(x):
+    return ((x & (x-1)) and x)
+
+    
 def main():
     q = int(input())
-    soma = 0
-    res = 0
-    qtdNum = 0
     i = 0
-    j = 1
 
 
     while(i<q):
         x = int(input())
 
-        for j in range (x):
-           soma+=j
-           tent = soma
-         
+        res = soma(x)
 
-        if(res==1 and qtdNum >= 2):
-            print('YES')
+        if(res == False):
+            print("NO")
         else:
-            print('NO')
-
-        soma=0
+            print("YES")      
+                    
         i+=1
-
-  
-
+    
 
 main()
