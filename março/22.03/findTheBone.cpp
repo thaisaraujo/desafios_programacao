@@ -12,55 +12,58 @@ saida: posicao final do osso
  
 */
 
+
 int main(){
    
-    int m, n, k, u, v, i=0, achei=1, saidaUm=0, b, buraco = -1;
+    long m, n, k, u, v, b, i=0, achei=1;
+    
 
     cin >> n >> m >> k;
-    cout << n;
-
     int copos[n+1] = {0};
 
-    for(i=0;i<m;i++){
+  /*  for(i=0;i<=n;i++){
+        cout<< copos[i];
+    }
+
+    cout << n;*/
+
+
+    for(i=0;i<m;i++){      
         cin>>b;
         copos[b] = 1;
     }
 
     if(copos[1] == 1){
-        saidaUm=1;
+        achei = 1;
+        cout<<achei<<"\n";
         return 0;
     }
 
-    b = 0;
+
     for(i=0;i<k;i++){
         cin>>u>>v;
 
-        if(achei == u){
+        if(copos[achei] == 1){
+            cout<<achei<<"\n";
+            return 0;
+        }
+
+        if(u == achei && copos[u] != 1){
             achei = v;
-        }else if(achei == v){
+        }else if(v == achei && copos[v] != 1){
             achei = u;
         }
 
-        if(copos[achei] == 1 and buraco == -1){
-            b = achei;
-            buraco = 4;
-            break;
-        }
-      
-            
-        
-        
+       
+
      /*   cout<<i;*/
     }
 
 
-    if(saidaUm != 0){
-        cout<<1<<"\n";
-    }else if(b != 0){
-        cout<<b<<"\n";
-    }else{
-        cout<<achei<<"\n";
-    }
+    cout<<achei<<"\n";
+
+    return 0;
+
    
 
 }

@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 
 
@@ -14,10 +15,23 @@ A soma de dois números consecutivos é ímpar, pois um deles deve ser par e out
 */
 
 int consecutive (int number){
-    int vetor [number];
-    long long int soma;
+    int count=0;
+    long long int soma=0;
 
-    for(i=0;i<number/2;i++)
+
+    if(soma != number){
+        for(i=1;i<number;i++){
+            
+            soma = (i+number/2)*
+
+        }
+
+    }else{
+        return 1;
+    }
+
+    return -1;
+
 }
 
 int main (){
