@@ -15,7 +15,7 @@ saida: posicao final do osso
 
 int main(){
    
-    long m, n, k, u, v, b, i=0, achei=1;
+    long m, n, k, u, v, b, i=0, achei=1, primeiro = 0;
     
 
     cin >> n >> m >> k;
@@ -34,23 +34,21 @@ int main(){
     }
 
     if(copos[1] == 1){
-        achei = 1;
-        cout<<achei<<"\n";
-        return 0;
+        primeiro = 1;
+        
     }
 
 
     for(i=0;i<k;i++){
         cin>>u>>v;
 
-        if(copos[achei] == 1){
-            cout<<achei<<"\n";
-            return 0;
+        if(copos[achei] == 1 || primeiro == 1){
+            continue;
         }
 
-        if(u == achei && copos[u] != 1){
+        if(u == achei){
             achei = v;
-        }else if(v == achei && copos[v] != 1){
+        }else if(v == achei ){
             achei = u;
         }
 

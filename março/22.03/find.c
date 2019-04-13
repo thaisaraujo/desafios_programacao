@@ -9,51 +9,45 @@ saida: posicao final do osso
  
 */
 
-#define max 1e6 + 5;
+#define max 1000002
 
 int main(){
-    int m, n, k, u, v, i=0, caiu = 0, achei = 0, b;
-    int copos[max], buraco[max]; 
+    int m, n, k, u, v, i=0,achei=1, b, primeiraP = 0;
+    int copos[max];
 
     scanf("%d %d %d", &n , &m, &k);
 
- /*   copos = (int *)calloc(n,sizeof(int));
-    copos[1] = 1;
-    caiu = 1;
+     for(i=0;i<n;i++){
+        copos[i] = 0;
+    }
 
- /*   buraco = (int *)malloc(n*sizeof(int));*/
 
     for(i=0;i<m;i++){
         scanf("%d", &b);
-        buraco[b] = 1;
+        copos[b] = 1;
     }
 
-    if(buraco[1] == 1){
-        achei = 1;
+    if(copos[1] == 1){
+        primeiraP = 1;
     }
 
     for(i=0;i<k;i++){
-        scanf("%d %d",&u,&v);        
+        scanf("%d %d",&u,&v);     
 
-        if(achei)
-            continue;
+        if(copos[achei]== 1 || primeiraP == 1)
+            continue;   
 
-        if(copos[u]){
-            copos[u]=0;
-            copos[v]=1;
-            caiu = v;
-        }else if(copos[v]){
-            copos[v]=0;
-            copos[u]=1;
-            caiu=u;
+        if(u == achei){
+            achei = v;
+        }else if(v == achei){
+            achei= u;
         }
-        if(buraco[caiu])
-            achei = 1;
+
 
     }
     
 
-    printf("%d\n", caiu);
+    printf("%d\n", achei);
 
     return 0;
 
