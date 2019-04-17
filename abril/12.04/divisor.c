@@ -1,31 +1,39 @@
 #include<stdio.h>
 #include<math.h>
 
-int decompor(int number){
-  int fator = 2
+/*
+ * Dividor Summantion - SPOJ DIVSUM
+ */
 
-  while(number > 1){
-    multiplo = 0;
-    while(number % fator == 0){
-      multiplo++;
-      number = number / fator;
+long long int soma (long long int number){
+  int i, raiz, soma=0;
+
+  raiz = sqrt(number);
+
+  for(i=1;i*i<number;i++){
+    if(number%i == 0){
+      soma+=i+number/i;
     }
+  }
 
-    if(multiplo != 0)
-      fator++;
+  if(raiz*raiz == number)
+    soma+=i;
 
 
+  return soma-number;
 }
 
+
+
+
 int main(){
-  int t, number, res, i=0;
+  int i=0, t, number;
 
   scanf("%d", &t);
 
-  while(i,t){
+  while(i<t){
     scanf("%d",&number);
-    res = decompor(number);
-    printf("%d\n",res);
+    printf("%lld\n",soma(number));
     i++;
 
   }
