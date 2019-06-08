@@ -1,14 +1,14 @@
 '''
 desafio E - Increasing subsequenca (easy version)
 '''
-
-n = int(input())
 saida = []
 lista = []
 
+
+n = int(input())
 lista = input()
-lista= lista.split(" ")
-lista = list(map(int, lista))  #inteiros
+lista = list(map(int, lista.split(" ")))
+#cprint(lista)
 
 ini = 0
 fim = len(lista)-1

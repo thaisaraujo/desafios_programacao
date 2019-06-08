@@ -8,15 +8,15 @@
  int main(){
    int entrada, a, b, c;
 
-   while(scanf("%d %d %d", &a, &b, &c) != EOF){
+   while((scanf("%d %d %d", &a, &b, &c))!= EOF){
 
-     if(a == b == c){
+     if(a == b && a == c && b == c){
        printf("*\n");
-     }else if(a != b && a != c && b == c){
+     }else if(a != b && b == c){
        printf("A\n");
-     }else if(b != a && b != c && a == c){
+     }else if(b != a && a == c){
        printf("B\n");
-     }else if(c != a && c != b && a == b){
+     }else if(c != a && a == b){
        printf("C\n");
      }
 
