@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+//NÃO PASSOU =(
+
 int main(){
   int n, m, precoUmLadrinho, precoDoisLadrinho, t, qtdColuna=0;
   int ladrinho2Possivel=0, restanteLadrinho=0, precoL1=0, precoL2=0;
