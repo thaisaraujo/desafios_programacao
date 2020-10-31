@@ -2,6 +2,8 @@
 
 typedef long long int ll;
 
+//não passou
+
 int main(){
   ll res [10001];
   int n;
