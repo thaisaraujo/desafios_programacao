@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+#include<math.h>
+using namespace std;
+
+//Buy the String
+// 20/11/2020
+
+int main() {
+    int t, n, c0, c1, h, j=0;
+    int valorTotal=0;
+    string s;
+    
+    cin >> t;
+    
+    while(j < t){
+        cin >> n >> c0 >> c1 >> h;
+        cin >> s;
+        
+        //cout << n << c0 << c1 << h << endl;
+        //cout << s;
+        /*
+        if(c0 == c1 == h){
+            valorTotal = n*h;
+        }else{
+            */
+        
+            for(int i=0; i<n; i++){
+                if(s[i] == '1'){
+                    valorTotal += min(c1, c0+h);
+                }else{
+                    valorTotal += min(c0, c1+h);
+                }
+            }
+            
+        //}
+         cout << valorTotal << endl;
+         valorTotal = 0;
+         j++;
+    }
+    
+    return 0;
+    
+}
