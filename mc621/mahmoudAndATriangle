@@ -1,0 +1,45 @@
+#include<iostream>
+#include<vector>
+#include<math.h>
+#include <algorithm>
+using namespace std;
+
+typedef unsigned long long int ll;
+
+int main(){
+    int n, flagRes=1;
+
+    cin >> n;
+    ll seg[n];
+    
+    for(int i=0; i<n; i++){
+        cin >> seg[i];
+    }
+    
+    //ordenar
+    sort(seg,seg+n);
+    
+    // for(int i=0; i<n; i++){
+    //     cout << seg[i];
+    // }
+    
+    //cout << "oi" << endl;
+    
+    //definir triangulo com y fixo
+    for(int i=1; i<n-1; i++){
+        if(seg[i-1]+seg[i]>seg[i+1]){
+            cout << "YES" << endl;
+            flagRes = 0;
+            break;
+        }
+    }
+    
+    //cout << flagRes << endl;
+    
+    if(flagRes){
+        cout << "NO" << endl;
+        
+    }
+    
+    return 0;
+}
