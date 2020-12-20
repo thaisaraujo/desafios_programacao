@@ -1,0 +1,26 @@
+//special permutation
+
+
+#include<iostream>
+#include<vector>
+#include<math.h>
+using namespace std;
+
+int main(){
+    int t, n; 
+    
+    cin >> t;
+    
+    while(t--){
+        cin >> n;
+
+        for(int k=2; k <= n; k++){
+            cout << k << " ";
+        }
+        
+        cout << 1 << endl;
+        
+    }
+    
+    return 0;
+}
