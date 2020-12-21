@@ -1,0 +1,40 @@
+//Unique Bid Auction 
+
+
+#include<iostream>
+#include<vector>
+#include<math.h>
+using namespace std;
+
+
+int main(){
+    int t, n, input, res=-1;
+    
+    cin >> t;
+    
+    while(t--){
+        cin >> n;
+        vector<int> lances (n+1);
+        vector<int> indices (n+1);
+        
+        for(int i=0; i < n; i++){
+            cin >> input;
+            ++lances[input]; //armazenar lance no indice do seu valor - acrescentar o valor do array na posicao caso tenha mais de um lance
+            indices[input] = i+1; //armazenar o valor do indice do jogador na posicao do seu lance
+        }
+        
+        //procurando o lance minimo unico
+        for(int j=0; j <=n; j++){
+            if(lances[j] == 1){ //lance unico
+                res = indices[j];
+                break;
+            }
+        }
+        
+        cout << res << endl;
+        res = -1;
+            
+    }
+    
+    return 0;
+}
