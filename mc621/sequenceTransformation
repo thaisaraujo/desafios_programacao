@@ -1,0 +1,50 @@
+#include<iostream>
+#include<vector>
+#include<math.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+//Sequence Transformation 
+
+
+int main(){
+    int t, n, i, temp;
+    int minimo = 100005;
+
+    
+    cin >> t;
+    
+    while(t--){
+        
+        cin >> n;
+        vector<int>seq(n);
+        vector<int>res(n+1, 1);
+        
+        for(auto &it : seq){
+            cin >> it;
+        }
+            
+        n = unique(seq.begin(), seq.end()) - seq.begin();
+        seq.resize(n);
+        
+        for(i=0;i<n;i++){
+            res[seq[i]]++;
+        }
+        
+        res[seq[0]]--;
+        res[seq[n-1]]--;
+        
+        
+        minimo = 100005;
+        for(i=0;i<n;i++){
+            temp = res[seq[i]];
+            minimo = min(minimo, temp);
+        }
+        
+        cout << minimo << endl;
+        
+    }
+    
+    return 0;
+}
